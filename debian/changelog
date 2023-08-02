@@ -1,0 +1,60 @@
+rockchip-iqfiles (0.1.8) jammy; urgency=medium
+
+  [ Ken Wang ]
+  * add OKDO 5MP Camera iq file
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 25 Jul 2023 10:35:33 +0000
+
+rockchip-iqfiles (0.1.7) jammy; urgency=medium
+
+  [ Ken Wang ]
+  * update rpi camera v2 iq file
+  * add rpi camera v1p3 iq file
+
+  [ ZHANG Yuntian ]
+  * Update CI
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 10 Jul 2023 04:11:47 +0000
+
+rockchip-iqfiles (0.1.6) stable; urgency=medium
+
+  * Update Radxa Camera 4K profile for RK3588
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 12 May 2023 18:03:00 +0800
+
+rockchip-iqfiles (0.1.5) stable; urgency=medium
+
+  * Update Raspberry Pi Camera Module 2 profile for RK356X
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 30 Mar 2023 18:23:35 +0800
+
+rockchip-iqfiles (0.1.4) stable; urgency=medium
+
+  * Add rockchip-iqfiles-rk356x for RK356X specific profile
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 29 Mar 2023 21:58:48 +0800
+
+rockchip-iqfiles (0.1.3) stable; urgency=medium
+
+  * Add Raspberry Pi Camera Module 2 (IMX219) profile for rkaiq
+  * Add Radxa Camera 4K (IMX415) profile for rkaiq
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Sat, 14 Jan 2023 19:14:55 +0800
+
+rockchip-iqfiles (0.1.2) stable; urgency=medium
+
+  * Update CI
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 30 Dec 2022 18:57:43 +0800
+
+rockchip-iqfiles (0.1.1) stable; urgency=medium
+
+  * Add OV5647 profiles
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 30 Dec 2022 16:57:44 +0800
+
+rockchip-iqfiles (0.1.0) stable; urgency=medium
+
+  * Add support for Raspberry Pi Camera Module 2 (IMX219)
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 24 Oct 2022 15:18:52 +0800

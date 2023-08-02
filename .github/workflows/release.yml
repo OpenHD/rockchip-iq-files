@@ -1,0 +1,28 @@
+name: Build & Release
+on: 
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Test
+        run: |
+          make test
+      - name: Build
+        run: |
+          sudo apt-get update
+          sudo apt-get build-dep --no-install-recommends -y .
+          make all deb
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ github.event.repository.name }}
+          path: |
+            ${{ env.artifacts_path }}/*.deb
