@@ -17,7 +17,6 @@ jobs:
           ls -a
           sudo apt install -y git ruby-dev
           sudo gem install fpm
-          cd rockchip-iqfiles
           mkdir -p etc/iqfiles/
           mv rockchip-iqfiles/* etc/iqfiles/
           fpm -a arm64 -s dir -t deb -n rockchip-iq-openhd -v 0.1 -C rockchip-iqfiles -p rockchip-iq-openhd_VERSION_ARCH.deb
@@ -27,3 +26,16 @@ jobs:
           name: ${{ github.event.repository.name }}
           path: |
             ${{ env.artifacts_path }}/*.deb
+      - name: Push
+        id: push
+        uses: cloudsmith-io/action@master
+        with:
+          api-key: ${{ secrets.CLOUDSMITH_API_KEY }}
+          command: "push"
+          format: "deb"
+          owner: "openhd"
+          repo: "openhd-2-3-evo"
+          distro: "debian"
+          release: "bullseye"
+          republish: "true" # needed ONLY if version is not changing
+          file: "*.deb"
