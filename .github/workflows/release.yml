@@ -17,12 +17,9 @@ jobs:
           ls -a
           sudo apt install -y git ruby-dev
           sudo gem install fpm
-          cd rockchip-iqfiles/rockchip-iqfiles
-          mkdir -p ../etc/iqfiles/
-          mv rockchip-iqfiles/* ../etc/iqfiles/
-          cd ../
-          rm -Rf rockchip-iqfiles
-          cd ../
+          cd rockchip-iqfiles
+          mkdir -p etc/iqfiles/
+          mv rockchip-iqfiles/* etc/iqfiles/
           fpm -a arm64 -s dir -t deb -n rockchip-iq-openhd -v 0.1 -C rockchip-iqfiles -p rockchip-iq-openhd_VERSION_ARCH.deb
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
