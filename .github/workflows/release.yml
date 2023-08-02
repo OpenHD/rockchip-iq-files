@@ -14,9 +14,16 @@ jobs:
           fetch-depth: 0
       - name: Build
         run: |
-          sudo apt-get update
-          sudo apt-get build-dep --no-install-recommends -y .
-          make all deb
+          ls -a
+          sudo apt install -y git ruby-dev
+          gem install fpm
+          cd rockchip-iqfiles/rockchip-iqfiles
+          mkdir -p ../etc/iqfiles/
+          mv rockchip-iqfiles/* ../etc/iqfiles/
+          cd ../
+          rm -Rf rockchip-iqfiles
+          cd ../
+          fpm -a arm64 -s dir -t deb -n rockchip-iq-openhd -v 0.1 -C rockchip-iqfiles -p rockchip-iq-openhd_VERSION_ARCH.deb
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
