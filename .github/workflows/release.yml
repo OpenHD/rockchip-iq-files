@@ -16,7 +16,7 @@ jobs:
         run: |
           ls -a
           sudo apt install -y git ruby-dev
-          gem install fpm
+          sudo gem install fpm
           cd rockchip-iqfiles/rockchip-iqfiles
           mkdir -p ../etc/iqfiles/
           mv rockchip-iqfiles/* ../etc/iqfiles/
