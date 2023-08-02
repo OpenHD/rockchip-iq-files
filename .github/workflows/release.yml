@@ -15,15 +15,13 @@ jobs:
       - name: Build
         run: |
           ls -a
-          sudo apt install -y git ruby-dev
-          sudo gem install fpm
           mkdir -p etc/iqfiles/
           mv rockchip-iqfiles/* etc/iqfiles/
           mv etc rockchip-iqfiles/
           ls -a
           echo "testing"
           ls -a rockchip-iqfiles/
-          fpm -a arm64 -s dir -t deb -n rockchip-iq-openhd -v 0.1 -C rockchip-iqfiles -p rockchip-iq-openhd_VERSION_ARCH.deb
+          fpm -a arm64 -s dir -t deb -n rockchip-iq-openhd -v 0.2 -C rockchip-iqfiles -p rockchip-iq-openhd_VERSION_ARCH.deb
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
