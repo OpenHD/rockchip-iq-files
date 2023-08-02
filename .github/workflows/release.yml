@@ -25,7 +25,7 @@ jobs:
         with:
           name: ${{ github.event.repository.name }}
           path: |
-            ${{ env.artifacts_path }}/*.deb
+            *.deb
       - name: Push
         id: push
         uses: cloudsmith-io/action@master
