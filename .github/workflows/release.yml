@@ -12,9 +12,6 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Test
-        run: |
-          make test
       - name: Build
         run: |
           sudo apt-get update

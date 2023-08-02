@@ -15,25 +15,6 @@ all: build
 .PHONY: test
 test:
 
-#
-# Build
-#
-.PHONY: build
-build: build-doc
-
-$(SRC-MAN)/%: $(SRC-MAN)/%.md
-	pandoc "$<" -o "$@" --from markdown --to man -s
-
-SRC-DOC		:=	.
-DOCS		:=	$(SRC-DOC)/SOURCE
-build-doc: $(DOCS)
-
-$(SRC-DOC):
-	mkdir -p $(SRC-DOC)
-
-.PHONY: $(SRC-DOC)/SOURCE
-$(SRC-DOC)/SOURCE: $(SRC-DOC)
-	echo -e "git clone $(shell git remote get-url origin)\ngit checkout $(shell git rev-parse HEAD)" > "$@"
 
 #
 # Clean
