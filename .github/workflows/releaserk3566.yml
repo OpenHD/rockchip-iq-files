@@ -14,15 +14,11 @@ jobs:
           fetch-depth: 0
       - name: Build
         run: |
-          ls -a
           mkdir -p etc/iqfiles/
-          mv rockchip-iqfiles/* etc/iqfiles/
+          mv rockchip-iqfiles-rk356x/* etc/iqfiles/
           mv etc rockchip-iqfiles/
-          ls -a
-          echo "testing"
-          ls -a rockchip-iqfiles/
           sudo gem install fpm
-          fpm -a arm64 -s dir -t deb -n rockchip-iq-openhd-r3 -v 0.2 -C rockchip-iqfiles -p rockchip-iq-openhd-r3_VERSION_ARCH.deb
+          fpm -a arm64 -s dir -t deb -n rockchip-iq-openhd-r3 -v 0.3 -C rockchip-iqfiles -p rockchip-iq-openhd-r3_VERSION_ARCH.deb
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
